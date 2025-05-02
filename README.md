@@ -1,6 +1,14 @@
 fly-tailscale-exit
 ------------------
 
+> ⚠️ **Note:** This is a **forked and updated version as of May 2025** to work with the latest Fly.io Machines and nftables support.
+>
+> - Tailscale is now installed via the official Alpine `tailscale` package (`apk add tailscale`)
+> - The legacy `iptables` symlink workaround has been removed
+> - A simplified `start.sh` script is used for setup
+>
+> Original repo: [https://github.com/patte/fly-tailscale-exit](https://github.com/patte/fly-tailscale-exit)
+
 ![Action Status: auto update tailscale version](https://github.com/patte/fly-tailscale-exit/actions/workflows/auto-update-tailscale.yml/badge.svg)
 
 This repo shows how to run tailscale on fly, specifically to run exit nodes.
@@ -72,7 +80,7 @@ git clone https://github.com/patte/fly-tailscale-exit.git
 
 cd fly-tailscale-exit
 
-fly launch
+fly launch --no-deploy
 
 ? fly.toml file already exits would you like copy its configuration : (yes/no) yes
 
