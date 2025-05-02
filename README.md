@@ -9,6 +9,22 @@ fly-tailscale-exit
 >
 > Original repo: [https://github.com/patte/fly-tailscale-exit](https://github.com/patte/fly-tailscale-exit)
 
+## TL;DR Set Up
+
+- Get a Tailscale auth key.
+- Set up fly.io org.
+- Install fly cli.
+- Launch, set up, and deploy
+
+```
+fly launch --no-deploy
+fly secrets set TAILSCALE_AUTH_KEY=ts-key -a <your-app>
+fly deploy
+fly scale count 1
+```
+
+> Original README Below
+
 ![Action Status: auto update tailscale version](https://github.com/patte/fly-tailscale-exit/actions/workflows/auto-update-tailscale.yml/badge.svg)
 
 This repo shows how to run tailscale on fly, specifically to run exit nodes.
